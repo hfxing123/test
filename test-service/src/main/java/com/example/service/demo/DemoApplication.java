@@ -1,11 +1,9 @@
-package com.example.demo;
+package com.example.service.demo;
 
-import com.example.demo.base.DiscardServer;
-import com.example.demo.dao.HotelMapper;
+import com.example.service.base.DiscardServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 //@ComponentScan(basePackages = {"com.example"})
 //@MapperScan("com.example.demo.dao")

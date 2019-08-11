@@ -1,4 +1,4 @@
-package com.example.demo.base;
+package com.example.service.base;
 
 import com.sun.deploy.net.protocol.ProtocolType;
 

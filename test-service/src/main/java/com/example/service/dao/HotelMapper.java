@@ -13,11 +13,10 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.example.demo.dao;
+package com.example.service.dao;
 
-import com.example.demo.model.Hotel;
+import com.example.service.model.Hotel;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
 /**
  * @author Eduardo Macarron

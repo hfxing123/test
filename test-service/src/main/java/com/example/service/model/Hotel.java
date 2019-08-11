@@ -16,7 +16,7 @@
 /**
  * @author Eduardo Macarron
  */
-package com.example.demo.model;
+package com.example.service.model;
 
 import java.io.Serializable;
 
