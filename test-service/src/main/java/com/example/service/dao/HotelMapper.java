@@ -17,10 +17,12 @@ package com.example.service.dao;
 
 import com.example.service.model.Hotel;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 /**
  * @author Eduardo Macarron
  */
+@Repository
 @Mapper
 public interface HotelMapper {
 

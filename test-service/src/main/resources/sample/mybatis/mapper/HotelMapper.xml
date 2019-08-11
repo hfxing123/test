@@ -21,7 +21,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.service.dao.HotelMapper">
 
-    <select id="selectByCityId" resultType="Hotel">
+    <select id="selectByCityId" resultType="com.example.service.model.Hotel">
         select * from hotel where city = #{id}
     </select>
 
