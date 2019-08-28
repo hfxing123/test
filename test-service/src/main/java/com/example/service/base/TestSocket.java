@@ -1,10 +1,8 @@
 package com.example.service.base;
 
-import com.sun.deploy.net.protocol.ProtocolType;
 
-import javax.sound.sampled.AudioFormat;
+
 import java.io.*;
-import java.net.ServerSocket;
 import java.net.Socket;
 
 public class TestSocket {

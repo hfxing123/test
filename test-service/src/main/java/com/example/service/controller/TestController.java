@@ -3,7 +3,9 @@ package com.example.service.controller;
 import com.alibaba.fastjson.JSON;
 import com.example.service.dao.HotelMapper;
 import com.example.service.model.Hotel;
+import com.example.service.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,15 +16,37 @@ import java.util.Map;
 public class TestController {
 
     @Autowired
-    HotelMapper hotelMapper;
+    private HotelMapper hotelMapper;
+
+    @Autowired
+    private TestService testService;
+
+    @Value("${customValue.tempValue}")
+    private String tempValue;
 
     @RequestMapping("/getData")
     public String getData()
     {
 
+        testService.sendData();
+
         return JSON.toJSON(hotelMapper.selectByCityId(1)).toString();
         //return "testRibbon2";
     }
+
+
+    @RequestMapping("/getData2")
+    public String getData2()
+    {
+        return testService.getData();
+    }
+
+    @RequestMapping("/getData3")
+    public String getData3()
+    {
+        return "获得的tempValue="+tempValue;
+    }
+
 
     /*
     @RequestMapping("/")

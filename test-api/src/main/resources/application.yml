@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: @profileActive@
+
+#java -jar temp.jar --spring.profiles.active=test
+#clean package -DskipTests -Ppro

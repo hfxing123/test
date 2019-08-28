@@ -19,6 +19,24 @@
     <name>test-parent</name>
     <description>Demo project for Spring Boot</description>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <profileActive>dev</profileActive>
+            </properties>
+        </profile>
+        <profile>
+            <id>pro</id>
+            <properties>
+                <profileActive>pro</profileActive>
+            </properties>
+        </profile>
+    </profiles>
+
     <modules>
         <module>test-common</module>
         <module>test-service</module>
