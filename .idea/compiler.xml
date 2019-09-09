@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="test-common" />
         <module name="test-service" />
+        <module name="test-eureka" />
         <module name="test-api" />
       </profile>
     </annotationProcessing>
@@ -15,6 +16,7 @@
       <module name="test" target="1.8" />
       <module name="test-api" target="1.8" />
       <module name="test-common" target="1.5" />
+      <module name="test-eureka" target="1.8" />
       <module name="test-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -23,6 +25,7 @@
       <module name="test" options="-parameters" />
       <module name="test-api" options="-parameters" />
       <module name="test-common" options="" />
+      <module name="test-eureka" options="-parameters" />
       <module name="test-service" options="-parameters" />
     </option>
   </component>

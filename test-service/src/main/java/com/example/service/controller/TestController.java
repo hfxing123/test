@@ -2,16 +2,25 @@ package com.example.service.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.example.service.dao.HotelMapper;
-import com.example.service.model.Hotel;
+import com.example.common.entry.hotel.Hotel;
+import com.example.common.entry.tw.Tw;
+import com.example.service.dao.TwMapper;
+import com.example.service.service.TestCVS;
 import com.example.service.service.TestService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
+@Api("用户信息管理")
 @RestController
 public class TestController {
 
@@ -19,12 +28,19 @@ public class TestController {
     private HotelMapper hotelMapper;
 
     @Autowired
+    private TwMapper twMapper;
+
+    @Autowired
     private TestService testService;
+
+    @Autowired
+    private TestCVS testCVS;
 
     @Value("${customValue.tempValue}")
     private String tempValue;
 
-    @RequestMapping("/getData")
+    //@RequestMapping("/getData")
+    @PostMapping("/getData")
     public String getData()
     {
 
@@ -35,18 +51,98 @@ public class TestController {
     }
 
 
-    @RequestMapping("/getData2")
+    //@RequestMapping("/getData2")
+    @PostMapping("/getData2")
     public String getData2()
     {
         return testService.getData();
     }
 
-    @RequestMapping("/getData3")
+    //@RequestMapping("/getData3")
+    @PostMapping("/getData3")
     public String getData3()
     {
         return "获得的tempValue="+tempValue;
     }
 
+    //@RequestMapping("/getData4")
+    @PostMapping("/getData4")
+    public String getData4()
+    {
+
+        //PageHelper.startPage(1, 10);
+        List<Hotel> list=hotelMapper.findList(new Hotel());
+
+
+        return JSON.toJSON(list).toString();
+
+        //return "获得的tempValue="+tempValue;
+    }
+
+    //@RequestMapping("/getData5")
+    @PostMapping("/getData5")
+    public String getData5()
+    {
+
+        //pageNum, int pageSize
+        PageHelper.startPage(1, 10);
+        List<Hotel> list=hotelMapper.findList(new Hotel());
+        PageInfo info =new PageInfo(list);
+
+        return JSON.toJSON(info).toString();
+
+        //return "获得的tempValue="+tempValue;
+    }
+
+
+    //@ApiImplicitParam( name = "tImages",value = "请输入对应数据", paramType = "body", required = false, dataType = "TImages")
+    @ApiOperation(value = "插入数据",notes = "插入数据")
+    @ApiImplicitParam( name = "test",value = "请输入对应数据", paramType = "body", required = false,dataType = "Tw")
+    @PostMapping("/getData6")
+    public String getData6(Tw tw) throws Exception
+    {
+
+        //PageHelper.startPage(1, 10);
+        //List<Hotel> list=hotelMapper.findList(new Hotel());
+
+        //testCVS.main(new String[]{});
+
+        testService.insertTw();
+
+        return "成功";
+
+        //return "获得的tempValue="+tempValue;
+    }
+
+    @PostMapping("/getData7")
+    public String getData7()
+    {
+
+        //pageNum, int pageSize
+        /*
+        PageHelper.startPage(1, 10);
+        List<Hotel> list=hotelMapper.findList(new Hotel());
+        PageInfo info =new PageInfo(list);
+
+         */
+
+        Tw tw=twMapper.selectByPrimaryKey(1);
+
+        return JSON.toJSON(tw).toString();
+
+        //return "获得的tempValue="+tempValue;
+    }
+
+    @PostMapping("/getData8")
+    public String getData8()
+    {
+
+        Hotel hotel=hotelMapper.selectByCityId(1);
+
+        return JSON.toJSON(hotel).toString();
+
+        //return "获得的tempValue="+tempValue;
+    }
 
     /*
     @RequestMapping("/")

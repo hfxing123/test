@@ -16,7 +16,7 @@
 /**
  * @author Eduardo Macarron
  */
-package com.example.service.model;
+package com.example.common.entry.hotel;
 
 import java.io.Serializable;
 

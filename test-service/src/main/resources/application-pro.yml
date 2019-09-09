@@ -40,5 +40,48 @@ mybatis:
     default-fetch-size: 100
     default-statement-timeout: 30
 
+#mapper
+#mappers 多个接口时逗号隔开
+#mapper:
+#  mappers: tk.mybatis.springboot.util.MyMapper
+#  not-empty: false
+#  i-d-e-n-t-i-t-y: MYSQL
+
+#pagehelper
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+
 customValue:
   tempValue: pro
+
+
+#swagger配置
+swagger:
+  enabled: true
+  title: spring-boot-starter-swagger
+  description: Starter for swagger 2.x
+  version: 1.4.0.RELEASE
+#  license: Apache License, Version 2.0
+#  licenseUrl: https://www.apache.org/licenses/LICENSE-2.0.html
+#  termsOfServiceUrl: https://github.com/dyc87112/spring-boot-starter-swagger
+#  base-package: com.controller
+#  contact:
+#    name: temp
+#    url: http://blog.didispace.com
+#    email: hfxing123@qq.com
+#  base-path: /**
+#  exclude-path: /error, /ops/**
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8079/eureka/

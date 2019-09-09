@@ -1,12 +1,13 @@
 package com.example.service.service;
 
-import com.alibaba.fastjson.JSON;
+import com.example.service.dao.TwMapper;
+import com.example.common.entry.tw.Tw;
 import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.core.AmqpTemplate;
-import org.springframework.amqp.core.Message;
-import org.springframework.amqp.core.MessageProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.UUID;
 
 @Service
 public class TestService {
@@ -17,6 +18,9 @@ public class TestService {
     @Autowired
     private AmqpTemplate amqpTemplate;
 
+    @Autowired
+    private TwMapper twMapper;
+
     /*
     @Autowired
     public MyBean(AmqpAdmin amqpAdmin, AmqpTemplate amqpTemplate) {
@@ -25,22 +29,20 @@ public class TestService {
     }
     */
 
-    public boolean sendData()
-    {
+    public boolean sendData() {
 
         //amqpTemplate.convertAndSend("123456");
 
         //amqpTemplate.send("temp",new Message("temp123456".getBytes(), new MessageProperties()));
 
-        amqpTemplate.convertAndSend("temp","中文123456ごじゅうおんず");
+        amqpTemplate.convertAndSend("temp", "中文123456ごじゅうおんず");
 
         //amqpTemplate.convertAndSend("","");
 
         return true;
     }
 
-    public String getData()
-    {
+    public String getData() {
         /*
         Message m= amqpTemplate.receive("temp");
         //amqpTemplate.receiveAndReply()
@@ -53,8 +55,14 @@ public class TestService {
 
         //amqpTemplate.reply
 
-        return (String)amqpTemplate.receiveAndConvert("temp");
+        return (String) amqpTemplate.receiveAndConvert("temp");
 
+    }
+
+    public void insertTw() {
+        Tw tw = new Tw();
+        tw.setTweetid(UUID.randomUUID().toString());
+        twMapper.insertSelective(tw);
     }
 
 }

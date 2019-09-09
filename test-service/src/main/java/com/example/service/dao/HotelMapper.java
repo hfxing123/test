@@ -15,9 +15,11 @@
  */
 package com.example.service.dao;
 
-import com.example.service.model.Hotel;
+import com.example.common.entry.hotel.Hotel;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @author Eduardo Macarron
@@ -27,5 +29,7 @@ import org.springframework.stereotype.Repository;
 public interface HotelMapper {
 
 	Hotel selectByCityId(int city_id);
+
+    List<Hotel> findList(Hotel record);
 
 }
