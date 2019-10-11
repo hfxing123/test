@@ -85,3 +85,5 @@ eureka:
       enabled: true
     serviceUrl:
       defaultZone: http://127.0.0.1:8079/eureka/
+logging:
+  config: classpath:logback-pro.xml

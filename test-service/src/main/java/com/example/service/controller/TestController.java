@@ -5,6 +5,7 @@ import com.example.service.dao.HotelMapper;
 import com.example.common.entry.hotel.Hotel;
 import com.example.common.entry.tw.Tw;
 import com.example.service.dao.TwMapper;
+import com.example.service.service.TempService;
 import com.example.service.service.TestCVS;
 import com.example.service.service.TestService;
 import com.github.pagehelper.PageHelper;
@@ -14,15 +15,20 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 @Api("用户信息管理")
 @RestController
 public class TestController {
+
+    public final static Logger logger = LoggerFactory.getLogger(TestController.class);
 
     @Autowired
     private HotelMapper hotelMapper;
@@ -35,6 +41,9 @@ public class TestController {
 
     @Autowired
     private TestCVS testCVS;
+
+    @Autowired
+    private TempService tempService;
 
     @Value("${customValue.tempValue}")
     private String tempValue;
@@ -89,6 +98,8 @@ public class TestController {
         List<Hotel> list=hotelMapper.findList(new Hotel());
         PageInfo info =new PageInfo(list);
 
+        logger.error("测试错误");
+
         return JSON.toJSON(info).toString();
 
         //return "获得的tempValue="+tempValue;
@@ -142,6 +153,43 @@ public class TestController {
         return JSON.toJSON(hotel).toString();
 
         //return "获得的tempValue="+tempValue;
+    }
+
+
+    @GetMapping("/getData9")
+    public String getData9()
+    {
+
+        //Hotel hotel=hotelMapper.selectByCityId(1);
+
+        return "测试";
+
+        //return "获得的tempValue="+tempValue;
+    }
+
+    @GetMapping("/getMqData")
+    public String getMqData()
+    {
+        String temp=tempService.getData();
+        System.out.println("获得的mq里面的值为====="+temp);
+        return temp;
+    }
+
+
+    @GetMapping("/insertTw")
+    public String insertTw()
+    {
+        try
+        {
+            testCVS.temp(new String[]{});
+            return "成功";
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+            return "失败";
+        }
     }
 
     /*

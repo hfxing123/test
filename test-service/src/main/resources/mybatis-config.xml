@@ -30,8 +30,10 @@
     </mappers>
     -->
 
+    <!--
     <mappers>
         <mapper resource="sample/mybatis/mapper/HotelMapper.xml"/>
     </mappers>
+    -->
 
 </configuration>

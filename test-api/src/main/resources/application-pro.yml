@@ -1,6 +1,15 @@
 server:
   port: 8081
 
+spring:
+  application:
+    name: test-api
+  main:
+    allow-bean-definition-overriding: true
+  rabbitmq:
+    host: 47.107.46.179
+    port: 5672
+
 eureka:
   instance:
     prefer-ip-address: true
@@ -9,3 +18,9 @@ eureka:
       enabled: true
     serviceUrl:
       defaultZone: http://127.0.0.1:8079/eureka/
+
+
+#开启hystrix
+feign:
+  hystrix:
+    enabled: true
