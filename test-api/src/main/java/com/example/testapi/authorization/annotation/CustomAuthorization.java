@@ -15,10 +15,10 @@ import java.lang.annotation.Target;
  * @version 1.01
  *
  */
-@Target({ElementType.PARAMETER, ElementType.METHOD})  
+@Target({ElementType.PARAMETER, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)  
 @Documented
 @Inherited
-public @interface Authorization {
+public @interface CustomAuthorization {
     String description()  default "token认证开始...";
 }

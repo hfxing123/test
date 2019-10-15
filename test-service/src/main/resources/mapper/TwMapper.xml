@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.service.dao.TwMapper">
+  <resultMap id="BaseResultMap" type="com.example.common.entry.tw.Tw">
+    <id column="Id" jdbcType="INTEGER" property="id" />
+    <result column="tweetid" jdbcType="VARCHAR" property="tweetid" />
+    <result column="userid" jdbcType="VARCHAR" property="userid" />
+    <result column="user_display_name" jdbcType="VARCHAR" property="userDisplayName" />
+    <result column="user_screen_name" jdbcType="VARCHAR" property="userScreenName" />
+    <result column="user_reported_location" jdbcType="VARCHAR" property="userReportedLocation" />
+    <result column="user_profile_description" jdbcType="VARCHAR" property="userProfileDescription" />
+    <result column="user_profile_url" jdbcType="VARCHAR" property="userProfileUrl" />
+    <result column="follower_count" jdbcType="VARCHAR" property="followerCount" />
+    <result column="following_count" jdbcType="VARCHAR" property="followingCount" />
+    <result column="account_creation_date" jdbcType="VARCHAR" property="accountCreationDate" />
+    <result column="account_language" jdbcType="VARCHAR" property="accountLanguage" />
+    <result column="tweet_language" jdbcType="VARCHAR" property="tweetLanguage" />
+    <result column="tweet_text" jdbcType="VARCHAR" property="tweetText" />
+    <result column="tweet_time" jdbcType="VARCHAR" property="tweetTime" />
+    <result column="tweet_client_name" jdbcType="VARCHAR" property="tweetClientName" />
+    <result column="in_reply_to_userid" jdbcType="VARCHAR" property="inReplyToUserid" />
+    <result column="in_reply_to_tweetid" jdbcType="VARCHAR" property="inReplyToTweetid" />
+    <result column="quoted_tweet_tweetid" jdbcType="VARCHAR" property="quotedTweetTweetid" />
+    <result column="is_retweet" jdbcType="VARCHAR" property="isRetweet" />
+    <result column="retweet_userid" jdbcType="VARCHAR" property="retweetUserid" />
+    <result column="retweet_tweetid" jdbcType="VARCHAR" property="retweetTweetid" />
+    <result column="latitude" jdbcType="VARCHAR" property="latitude" />
+    <result column="longitude" jdbcType="VARCHAR" property="longitude" />
+    <result column="quote_count" jdbcType="VARCHAR" property="quoteCount" />
+    <result column="reply_count" jdbcType="VARCHAR" property="replyCount" />
+    <result column="like_count" jdbcType="VARCHAR" property="likeCount" />
+    <result column="retweet_count" jdbcType="VARCHAR" property="retweetCount" />
+    <result column="hashtags" jdbcType="VARCHAR" property="hashtags" />
+    <result column="urls" jdbcType="VARCHAR" property="urls" />
+    <result column="user_mentions" jdbcType="VARCHAR" property="userMentions" />
+    <result column="poll_choices" jdbcType="VARCHAR" property="pollChoices" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    Id, tweetid, userid, user_display_name, user_screen_name, user_reported_location, 
+    user_profile_description, user_profile_url, follower_count, following_count, account_creation_date, 
+    account_language, tweet_language, tweet_text, tweet_time, tweet_client_name, in_reply_to_userid, 
+    in_reply_to_tweetid, quoted_tweet_tweetid, is_retweet, retweet_userid, retweet_tweetid, 
+    latitude, longitude, quote_count, reply_count, like_count, retweet_count, hashtags, 
+    urls, user_mentions, poll_choices
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tw
+    where Id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tw
+    where Id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.common.entry.tw.Tw">
+    insert into tw (Id, tweetid, userid, 
+      user_display_name, user_screen_name, user_reported_location, 
+      user_profile_description, user_profile_url, 
+      follower_count, following_count, account_creation_date, 
+      account_language, tweet_language, tweet_text, 
+      tweet_time, tweet_client_name, in_reply_to_userid, 
+      in_reply_to_tweetid, quoted_tweet_tweetid, is_retweet, 
+      retweet_userid, retweet_tweetid, latitude, 
+      longitude, quote_count, reply_count, 
+      like_count, retweet_count, hashtags, 
+      urls, user_mentions, poll_choices
+      )
+    values (#{id,jdbcType=INTEGER}, #{tweetid,jdbcType=VARCHAR}, #{userid,jdbcType=VARCHAR}, 
+      #{userDisplayName,jdbcType=VARCHAR}, #{userScreenName,jdbcType=VARCHAR}, #{userReportedLocation,jdbcType=VARCHAR}, 
+      #{userProfileDescription,jdbcType=VARCHAR}, #{userProfileUrl,jdbcType=VARCHAR}, 
+      #{followerCount,jdbcType=VARCHAR}, #{followingCount,jdbcType=VARCHAR}, #{accountCreationDate,jdbcType=VARCHAR}, 
+      #{accountLanguage,jdbcType=VARCHAR}, #{tweetLanguage,jdbcType=VARCHAR}, #{tweetText,jdbcType=VARCHAR}, 
+      #{tweetTime,jdbcType=VARCHAR}, #{tweetClientName,jdbcType=VARCHAR}, #{inReplyToUserid,jdbcType=VARCHAR}, 
+      #{inReplyToTweetid,jdbcType=VARCHAR}, #{quotedTweetTweetid,jdbcType=VARCHAR}, #{isRetweet,jdbcType=VARCHAR}, 
+      #{retweetUserid,jdbcType=VARCHAR}, #{retweetTweetid,jdbcType=VARCHAR}, #{latitude,jdbcType=VARCHAR}, 
+      #{longitude,jdbcType=VARCHAR}, #{quoteCount,jdbcType=VARCHAR}, #{replyCount,jdbcType=VARCHAR}, 
+      #{likeCount,jdbcType=VARCHAR}, #{retweetCount,jdbcType=VARCHAR}, #{hashtags,jdbcType=VARCHAR}, 
+      #{urls,jdbcType=VARCHAR}, #{userMentions,jdbcType=VARCHAR}, #{pollChoices,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.common.entry.tw.Tw">
+    insert into tw
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        Id,
+      </if>
+      <if test="tweetid != null">
+        tweetid,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="userDisplayName != null">
+        user_display_name,
+      </if>
+      <if test="userScreenName != null">
+        user_screen_name,
+      </if>
+      <if test="userReportedLocation != null">
+        user_reported_location,
+      </if>
+      <if test="userProfileDescription != null">
+        user_profile_description,
+      </if>
+      <if test="userProfileUrl != null">
+        user_profile_url,
+      </if>
+      <if test="followerCount != null">
+        follower_count,
+      </if>
+      <if test="followingCount != null">
+        following_count,
+      </if>
+      <if test="accountCreationDate != null">
+        account_creation_date,
+      </if>
+      <if test="accountLanguage != null">
+        account_language,
+      </if>
+      <if test="tweetLanguage != null">
+        tweet_language,
+      </if>
+      <if test="tweetText != null">
+        tweet_text,
+      </if>
+      <if test="tweetTime != null">
+        tweet_time,
+      </if>
+      <if test="tweetClientName != null">
+        tweet_client_name,
+      </if>
+      <if test="inReplyToUserid != null">
+        in_reply_to_userid,
+      </if>
+      <if test="inReplyToTweetid != null">
+        in_reply_to_tweetid,
+      </if>
+      <if test="quotedTweetTweetid != null">
+        quoted_tweet_tweetid,
+      </if>
+      <if test="isRetweet != null">
+        is_retweet,
+      </if>
+      <if test="retweetUserid != null">
+        retweet_userid,
+      </if>
+      <if test="retweetTweetid != null">
+        retweet_tweetid,
+      </if>
+      <if test="latitude != null">
+        latitude,
+      </if>
+      <if test="longitude != null">
+        longitude,
+      </if>
+      <if test="quoteCount != null">
+        quote_count,
+      </if>
+      <if test="replyCount != null">
+        reply_count,
+      </if>
+      <if test="likeCount != null">
+        like_count,
+      </if>
+      <if test="retweetCount != null">
+        retweet_count,
+      </if>
+      <if test="hashtags != null">
+        hashtags,
+      </if>
+      <if test="urls != null">
+        urls,
+      </if>
+      <if test="userMentions != null">
+        user_mentions,
+      </if>
+      <if test="pollChoices != null">
+        poll_choices,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="tweetid != null">
+        #{tweetid,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="userDisplayName != null">
+        #{userDisplayName,jdbcType=VARCHAR},
+      </if>
+      <if test="userScreenName != null">
+        #{userScreenName,jdbcType=VARCHAR},
+      </if>
+      <if test="userReportedLocation != null">
+        #{userReportedLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="userProfileDescription != null">
+        #{userProfileDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="userProfileUrl != null">
+        #{userProfileUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="followerCount != null">
+        #{followerCount,jdbcType=VARCHAR},
+      </if>
+      <if test="followingCount != null">
+        #{followingCount,jdbcType=VARCHAR},
+      </if>
+      <if test="accountCreationDate != null">
+        #{accountCreationDate,jdbcType=VARCHAR},
+      </if>
+      <if test="accountLanguage != null">
+        #{accountLanguage,jdbcType=VARCHAR},
+      </if>
+      <if test="tweetLanguage != null">
+        #{tweetLanguage,jdbcType=VARCHAR},
+      </if>
+      <if test="tweetText != null">
+        #{tweetText,jdbcType=VARCHAR},
+      </if>
+      <if test="tweetTime != null">
+        #{tweetTime,jdbcType=VARCHAR},
+      </if>
+      <if test="tweetClientName != null">
+        #{tweetClientName,jdbcType=VARCHAR},
+      </if>
+      <if test="inReplyToUserid != null">
+        #{inReplyToUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="inReplyToTweetid != null">
+        #{inReplyToTweetid,jdbcType=VARCHAR},
+      </if>
+      <if test="quotedTweetTweetid != null">
+        #{quotedTweetTweetid,jdbcType=VARCHAR},
+      </if>
+      <if test="isRetweet != null">
+        #{isRetweet,jdbcType=VARCHAR},
+      </if>
+      <if test="retweetUserid != null">
+        #{retweetUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="retweetTweetid != null">
+        #{retweetTweetid,jdbcType=VARCHAR},
+      </if>
+      <if test="latitude != null">
+        #{latitude,jdbcType=VARCHAR},
+      </if>
+      <if test="longitude != null">
+        #{longitude,jdbcType=VARCHAR},
+      </if>
+      <if test="quoteCount != null">
+        #{quoteCount,jdbcType=VARCHAR},
+      </if>
+      <if test="replyCount != null">
+        #{replyCount,jdbcType=VARCHAR},
+      </if>
+      <if test="likeCount != null">
+        #{likeCount,jdbcType=VARCHAR},
+      </if>
+      <if test="retweetCount != null">
+        #{retweetCount,jdbcType=VARCHAR},
+      </if>
+      <if test="hashtags != null">
+        #{hashtags,jdbcType=VARCHAR},
+      </if>
+      <if test="urls != null">
+        #{urls,jdbcType=VARCHAR},
+      </if>
+      <if test="userMentions != null">
+        #{userMentions,jdbcType=VARCHAR},
+      </if>
+      <if test="pollChoices != null">
+        #{pollChoices,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.common.entry.tw.Tw">
+    update tw
+    <set>
+      <if test="tweetid != null">
+        tweetid = #{tweetid,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="userDisplayName != null">
+        user_display_name = #{userDisplayName,jdbcType=VARCHAR},
+      </if>
+      <if test="userScreenName != null">
+        user_screen_name = #{userScreenName,jdbcType=VARCHAR},
+      </if>
+      <if test="userReportedLocation != null">
+        user_reported_location = #{userReportedLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="userProfileDescription != null">
+        user_profile_description = #{userProfileDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="userProfileUrl != null">
+        user_profile_url = #{userProfileUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="followerCount != null">
+        follower_count = #{followerCount,jdbcType=VARCHAR},
+      </if>
+      <if test="followingCount != null">
+        following_count = #{followingCount,jdbcType=VARCHAR},
+      </if>
+      <if test="accountCreationDate != null">
+        account_creation_date = #{accountCreationDate,jdbcType=VARCHAR},
+      </if>
+      <if test="accountLanguage != null">
+        account_language = #{accountLanguage,jdbcType=VARCHAR},
+      </if>
+      <if test="tweetLanguage != null">
+        tweet_language = #{tweetLanguage,jdbcType=VARCHAR},
+      </if>
+      <if test="tweetText != null">
+        tweet_text = #{tweetText,jdbcType=VARCHAR},
+      </if>
+      <if test="tweetTime != null">
+        tweet_time = #{tweetTime,jdbcType=VARCHAR},
+      </if>
+      <if test="tweetClientName != null">
+        tweet_client_name = #{tweetClientName,jdbcType=VARCHAR},
+      </if>
+      <if test="inReplyToUserid != null">
+        in_reply_to_userid = #{inReplyToUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="inReplyToTweetid != null">
+        in_reply_to_tweetid = #{inReplyToTweetid,jdbcType=VARCHAR},
+      </if>
+      <if test="quotedTweetTweetid != null">
+        quoted_tweet_tweetid = #{quotedTweetTweetid,jdbcType=VARCHAR},
+      </if>
+      <if test="isRetweet != null">
+        is_retweet = #{isRetweet,jdbcType=VARCHAR},
+      </if>
+      <if test="retweetUserid != null">
+        retweet_userid = #{retweetUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="retweetTweetid != null">
+        retweet_tweetid = #{retweetTweetid,jdbcType=VARCHAR},
+      </if>
+      <if test="latitude != null">
+        latitude = #{latitude,jdbcType=VARCHAR},
+      </if>
+      <if test="longitude != null">
+        longitude = #{longitude,jdbcType=VARCHAR},
+      </if>
+      <if test="quoteCount != null">
+        quote_count = #{quoteCount,jdbcType=VARCHAR},
+      </if>
+      <if test="replyCount != null">
+        reply_count = #{replyCount,jdbcType=VARCHAR},
+      </if>
+      <if test="likeCount != null">
+        like_count = #{likeCount,jdbcType=VARCHAR},
+      </if>
+      <if test="retweetCount != null">
+        retweet_count = #{retweetCount,jdbcType=VARCHAR},
+      </if>
+      <if test="hashtags != null">
+        hashtags = #{hashtags,jdbcType=VARCHAR},
+      </if>
+      <if test="urls != null">
+        urls = #{urls,jdbcType=VARCHAR},
+      </if>
+      <if test="userMentions != null">
+        user_mentions = #{userMentions,jdbcType=VARCHAR},
+      </if>
+      <if test="pollChoices != null">
+        poll_choices = #{pollChoices,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.common.entry.tw.Tw">
+    update tw
+    set tweetid = #{tweetid,jdbcType=VARCHAR},
+      userid = #{userid,jdbcType=VARCHAR},
+      user_display_name = #{userDisplayName,jdbcType=VARCHAR},
+      user_screen_name = #{userScreenName,jdbcType=VARCHAR},
+      user_reported_location = #{userReportedLocation,jdbcType=VARCHAR},
+      user_profile_description = #{userProfileDescription,jdbcType=VARCHAR},
+      user_profile_url = #{userProfileUrl,jdbcType=VARCHAR},
+      follower_count = #{followerCount,jdbcType=VARCHAR},
+      following_count = #{followingCount,jdbcType=VARCHAR},
+      account_creation_date = #{accountCreationDate,jdbcType=VARCHAR},
+      account_language = #{accountLanguage,jdbcType=VARCHAR},
+      tweet_language = #{tweetLanguage,jdbcType=VARCHAR},
+      tweet_text = #{tweetText,jdbcType=VARCHAR},
+      tweet_time = #{tweetTime,jdbcType=VARCHAR},
+      tweet_client_name = #{tweetClientName,jdbcType=VARCHAR},
+      in_reply_to_userid = #{inReplyToUserid,jdbcType=VARCHAR},
+      in_reply_to_tweetid = #{inReplyToTweetid,jdbcType=VARCHAR},
+      quoted_tweet_tweetid = #{quotedTweetTweetid,jdbcType=VARCHAR},
+      is_retweet = #{isRetweet,jdbcType=VARCHAR},
+      retweet_userid = #{retweetUserid,jdbcType=VARCHAR},
+      retweet_tweetid = #{retweetTweetid,jdbcType=VARCHAR},
+      latitude = #{latitude,jdbcType=VARCHAR},
+      longitude = #{longitude,jdbcType=VARCHAR},
+      quote_count = #{quoteCount,jdbcType=VARCHAR},
+      reply_count = #{replyCount,jdbcType=VARCHAR},
+      like_count = #{likeCount,jdbcType=VARCHAR},
+      retweet_count = #{retweetCount,jdbcType=VARCHAR},
+      hashtags = #{hashtags,jdbcType=VARCHAR},
+      urls = #{urls,jdbcType=VARCHAR},
+      user_mentions = #{userMentions,jdbcType=VARCHAR},
+      poll_choices = #{pollChoices,jdbcType=VARCHAR}
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="findListBySelective" parameterType="com.example.common.entry.tw.Tw" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tw
+    <where>
+      <if test="id != null">
+         and Id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="tweetid != null">
+         and tweetid = #{tweetid,jdbcType=VARCHAR}
+      </if>
+      <if test="userid != null">
+         and userid = #{userid,jdbcType=VARCHAR}
+      </if>
+      <if test="userDisplayName != null">
+         and user_display_name = #{userDisplayName,jdbcType=VARCHAR}
+      </if>
+      <if test="userScreenName != null">
+         and user_screen_name = #{userScreenName,jdbcType=VARCHAR}
+      </if>
+      <if test="userReportedLocation != null">
+         and user_reported_location = #{userReportedLocation,jdbcType=VARCHAR}
+      </if>
+      <if test="userProfileDescription != null">
+         and user_profile_description = #{userProfileDescription,jdbcType=VARCHAR}
+      </if>
+      <if test="userProfileUrl != null">
+         and user_profile_url = #{userProfileUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="followerCount != null">
+         and follower_count = #{followerCount,jdbcType=VARCHAR}
+      </if>
+      <if test="followingCount != null">
+         and following_count = #{followingCount,jdbcType=VARCHAR}
+      </if>
+      <if test="accountCreationDate != null">
+         and account_creation_date = #{accountCreationDate,jdbcType=VARCHAR}
+      </if>
+      <if test="accountLanguage != null">
+         and account_language = #{accountLanguage,jdbcType=VARCHAR}
+      </if>
+      <if test="tweetLanguage != null">
+         and tweet_language = #{tweetLanguage,jdbcType=VARCHAR}
+      </if>
+      <if test="tweetText != null">
+         and tweet_text = #{tweetText,jdbcType=VARCHAR}
+      </if>
+      <if test="tweetTime != null">
+         and tweet_time = #{tweetTime,jdbcType=VARCHAR}
+      </if>
+      <if test="tweetClientName != null">
+         and tweet_client_name = #{tweetClientName,jdbcType=VARCHAR}
+      </if>
+      <if test="inReplyToUserid != null">
+         and in_reply_to_userid = #{inReplyToUserid,jdbcType=VARCHAR}
+      </if>
+      <if test="inReplyToTweetid != null">
+         and in_reply_to_tweetid = #{inReplyToTweetid,jdbcType=VARCHAR}
+      </if>
+      <if test="quotedTweetTweetid != null">
+         and quoted_tweet_tweetid = #{quotedTweetTweetid,jdbcType=VARCHAR}
+      </if>
+      <if test="isRetweet != null">
+         and is_retweet = #{isRetweet,jdbcType=VARCHAR}
+      </if>
+      <if test="retweetUserid != null">
+         and retweet_userid = #{retweetUserid,jdbcType=VARCHAR}
+      </if>
+      <if test="retweetTweetid != null">
+         and retweet_tweetid = #{retweetTweetid,jdbcType=VARCHAR}
+      </if>
+      <if test="latitude != null">
+         and latitude = #{latitude,jdbcType=VARCHAR}
+      </if>
+      <if test="longitude != null">
+         and longitude = #{longitude,jdbcType=VARCHAR}
+      </if>
+      <if test="quoteCount != null">
+         and quote_count = #{quoteCount,jdbcType=VARCHAR}
+      </if>
+      <if test="replyCount != null">
+         and reply_count = #{replyCount,jdbcType=VARCHAR}
+      </if>
+      <if test="likeCount != null">
+         and like_count = #{likeCount,jdbcType=VARCHAR}
+      </if>
+      <if test="retweetCount != null">
+         and retweet_count = #{retweetCount,jdbcType=VARCHAR}
+      </if>
+      <if test="hashtags != null">
+         and hashtags = #{hashtags,jdbcType=VARCHAR}
+      </if>
+      <if test="urls != null">
+         and urls = #{urls,jdbcType=VARCHAR}
+      </if>
+      <if test="userMentions != null">
+         and user_mentions = #{userMentions,jdbcType=VARCHAR}
+      </if>
+      <if test="pollChoices != null">
+         and poll_choices = #{pollChoices,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </select>
+
+</mapper>

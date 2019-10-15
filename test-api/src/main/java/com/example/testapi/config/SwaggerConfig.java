@@ -3,8 +3,7 @@ package com.example.testapi.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.*;
 import springfox.documentation.builders.*;
 import springfox.documentation.schema.ModelRef;
 import springfox.documentation.service.ApiInfo;
@@ -65,8 +64,24 @@ public class SwaggerConfig {
                 .globalOperationParameters(pars);//************把消息头添加
     }
 
+    /*
+    @Override
+    protected void addResourceHandlers(ResourceHandlerRegistry registry) {
+        System.out.println("进入了2");
+        registry.addResourceHandler("swagger-ui.html")
+                .addResourceLocations("classpath:/META-INF/resources/");
+
+        registry.addResourceHandler("/webjars/**")
+                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+    }
+     */
+
+    /*
     @Bean
     public WebMvcConfigurerAdapter addResourceHandlers() {
+
+        System.out.println("进入了筛选");
+
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -77,6 +92,11 @@ public class SwaggerConfig {
             }
         };
     }
+
+     */
+
+
+
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()

@@ -1,6 +1,7 @@
 package com.example.service.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.example.service.common.RedisCommon;
 import com.example.service.dao.HotelMapper;
 import com.example.common.entry.hotel.Hotel;
 import com.example.common.entry.tw.Tw;
@@ -44,6 +45,9 @@ public class TestController {
 
     @Autowired
     private TempService tempService;
+
+    @Autowired
+    private RedisCommon redisCommon;
 
     @Value("${customValue.tempValue}")
     private String tempValue;
@@ -182,6 +186,24 @@ public class TestController {
         try
         {
             testCVS.temp(new String[]{});
+            return "成功";
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+            return "失败";
+        }
+    }
+
+    @GetMapping("/testRedis")
+    public String testRedis()
+    {
+        try
+        {
+            redisCommon.setData();
+            redisCommon.getData();
+
             return "成功";
         }
         catch(Exception e)

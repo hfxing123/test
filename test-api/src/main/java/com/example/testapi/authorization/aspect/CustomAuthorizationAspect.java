@@ -25,17 +25,17 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Aspect
 @Component
-public class AuthorizationAspect {
+public class CustomAuthorizationAspect {
 
-    private static Logger logger = LoggerFactory.getLogger(AuthorizationAspect.class);
+    private static Logger logger = LoggerFactory.getLogger(CustomAuthorizationAspect.class);
 
     @Autowired
     TokenManager manager;
 
     // Controller层切点
-    @Pointcut("@annotation(com.example.testapi.authorization.annotation.Authorization)")
+    @Pointcut("@annotation(com.example.testapi.authorization.annotation.CustomAuthorization)")
     public void controllerAspect() {
-       logger.debug("Authorization切入点");
+       logger.debug("CustomAuthorization切入点");
     }
 
     /**
@@ -51,6 +51,9 @@ public class AuthorizationAspect {
     @RequestMapping(produces = "application/json; charset=UTF-8")
     public Object doAround(ProceedingJoinPoint joinPoint) throws Throwable {
         logger.debug("=====SysLogAspect 环绕通知开始=====");
+
+        //用做登录等表明使用了什么
+
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder
                 .getRequestAttributes()).getRequest();
         String token = request.getHeader("token");

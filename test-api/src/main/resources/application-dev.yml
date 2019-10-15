@@ -1,5 +1,7 @@
 server:
   port: 8081
+  tomcat:
+    uri-encoding: UTF-8
 
 spring:
   application:
@@ -17,7 +19,13 @@ spring:
       pool:
         min-idle: 0
 #    password:
-
+  http:
+    encoding:
+      charset: utf-8
+      force: true
+      enabled: true
+  messages:
+    encoding: UTF-8
 
 eureka:
   instance:
@@ -27,6 +35,7 @@ eureka:
       enabled: true
     serviceUrl:
       defaultZone: http://127.0.0.1:8079/eureka/
+#      defaultZone: http://47.107.46.179:8079/eureka/
 
 
 #开启hystrix

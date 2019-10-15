@@ -11,6 +11,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 通过Redis存储和验证token的实现类
@@ -41,9 +42,10 @@ public class RedisTokenManager implements TokenManager {
         return time;
     }
 
-    /**
+    /*
      * 校验登录
      */
+    /*
     public boolean checkLoginToken(String token) {
         //截取token
         String[] arr = token.split("_");
@@ -54,11 +56,11 @@ public class RedisTokenManager implements TokenManager {
             return false;
         }
     }
+    */
 
     public void createToken(UserInfo userInfo) throws Exception {
 
-        //redisTemplate.boundValueOps(ACCESS + userInfo.getToken()).set(userInfo, 2, TimeUnit.HOURS);
-        redisTemplate.boundValueOps(ACCESS + userInfo.getToken()).set(userInfo);
+        redisTemplate.boundValueOps(ACCESS + userInfo.getToken()).set(userInfo, 2, TimeUnit.HOURS);
 
     }
 

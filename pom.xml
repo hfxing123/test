@@ -38,6 +38,7 @@
     </profiles>
 
     <modules>
+        <module>test-eureka</module>
         <module>test-common</module>
         <module>test-service</module>
         <module>test-api</module>

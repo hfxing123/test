@@ -22,6 +22,14 @@ spring:
           enabled: true #是否支持重试
       direct:
         acknowledge-mode: manual #采用手动应答
+  redis: #redis
+    host: 47.107.46.179
+    port: 6379
+    #用连接池
+    jedis:
+      pool:
+        min-idle: 0
+  #    password:
   datasource:
 #    url: jdbc:mysql://47.107.46.179:8066/test?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
     url: jdbc:mysql://47.107.46.179:3308/test?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
@@ -113,6 +121,7 @@ eureka:
       enabled: true
     serviceUrl:
       defaultZone: http://127.0.0.1:8079/eureka/
+#      defaultZone: http://47.107.46.179/eureka/
 
 #management:
 #  health:
