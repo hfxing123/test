@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8071
   tomcat:
     uri-encoding: UTF-8
 
@@ -34,7 +34,7 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://127.0.0.1:8079/eureka/
+      defaultZone: http://127.0.0.1:8069/eureka/
 #      defaultZone: http://47.107.46.179:8079/eureka/
 
 
