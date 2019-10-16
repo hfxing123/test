@@ -110,7 +110,7 @@ logging:
         service:
           dao: debug
   #log4j2
-  config: classpath:logback-dev.xml
+  config: classpath:logback-pro.xml
 
 #eureka 配置，指定服务器
 eureka:

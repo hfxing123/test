@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="590ec9e1-a00d-40c2-8215-1ae61747f6ab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-service/src/main/resources/application-pro.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test-service/src/main/resources/application-pro.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +28,7 @@
   <component name="MavenImportPreferences">
     <option name="enabledProfiles">
       <list>
-        <option value="pro" />
+        <option value="dev" />
       </list>
     </option>
   </component>
@@ -197,7 +198,7 @@
       <workItem from="1571127614451" duration="2866000" />
       <workItem from="1571148341804" duration="2546000" />
       <workItem from="1571194525027" duration="1928000" />
-      <workItem from="1571202238398" duration="4581000" />
+      <workItem from="1571202238398" duration="4827000" />
     </task>
     <task id="LOCAL-00001" summary="还原原来的代码">
       <created>1568022022152</created>
@@ -234,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571205717440</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="在jenkins运行">
+      <created>1571208007797</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571208007798</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
