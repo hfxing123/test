@@ -32,4 +32,6 @@ public interface HotelMapper {
 
     List<Hotel> findList(Hotel record);
 
+    int insert(Hotel record);
+
 }

@@ -24,31 +24,19 @@ public class RedisCommon {
         redisTemplate.setKeySerializer(new JdkSerializationRedisSerializer());
     }
 
-    public void setData()
+    /* */
+    public RedisTemplate getRedisTemplate()
     {
-        Hotel h=new Hotel();
-        h.setCity(1L);
-        h.setName("测试1");
-        h.setZip("测试111");
-        h.setAddress("测试地址1");
-        stringRedisTemplate.opsForValue().set("1", JSON.toJSONString(h));
-
-        Hotel h2=new Hotel();
-        h.setCity(2L);
-        h.setName("测试2");
-        h.setZip("测试222");
-        h.setAddress("测试地址2");
-        redisTemplate.opsForValue().set("2", JSON.toJSONString(h));
-
+        return redisTemplate;
     }
 
-    public String getData()
+    //支持事务
+    public StringRedisTemplate getStringRedisTemplate()
     {
-        System.out.println("redis获取的="+stringRedisTemplate.opsForValue().get("1"));
-
-        System.out.println("redis获取2的="+redisTemplate.opsForValue().get("2"));
-
-        return "成功";
+        //stringRedisTemplate.setEnableTransactionSupport(true);
+        return stringRedisTemplate;
     }
+
+
 
 }

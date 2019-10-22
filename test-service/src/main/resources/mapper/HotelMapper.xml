@@ -29,4 +29,8 @@
         select * from hotel
     </select>
 
+    <insert id="insert" parameterType="com.example.common.entry.hotel.Hotel">
+        insert into hotel(name) values(#{name})
+    </insert>
+
 </mapper>

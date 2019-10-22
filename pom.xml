@@ -25,12 +25,12 @@
             <properties>
                 <profileActive>dev</profileActive>
             </properties>
-        </profile>
-        <profile>
-            <id>pro</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
+        </profile>
+        <profile>
+            <id>pro</id>
             <properties>
                 <profileActive>pro</profileActive>
             </properties>

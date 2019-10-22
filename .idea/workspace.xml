@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="590ec9e1-a00d-40c2-8215-1ae61747f6ab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_atteo_evo_inflector_1_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_rest_2_1_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_rest_core_3_1_9_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_rest_webmvc_3_1_9_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_hateoas_spring_hateoas_0_25_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/configuration/RedisConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/service/HotelService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/transaction-logs/tmlog1.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/common/RedisCommon.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/common/RedisCommon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/dao/HotelMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/dao/HotelMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-service/src/main/resources/mapper/HotelMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-service/src/main/resources/mapper/HotelMapper.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +41,7 @@
   <component name="MavenImportPreferences">
     <option name="enabledProfiles">
       <list>
-        <option value="pro" />
+        <option value="dev" />
       </list>
     </option>
   </component>
@@ -55,6 +68,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.service.service" />
       <recent name="com.example.common.util" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -82,7 +96,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.TestServiceApplication">
+  <component name="RunManager" selected="Spring Boot.TestEurekaApplication">
     <configuration name="TestClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.service.TestClass" />
       <module name="test-service" />
@@ -139,7 +153,22 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bbf89f83" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bbf89f83" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@af42daf2" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bbf89f83" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@931f94ad" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -198,7 +227,9 @@
       <workItem from="1571127614451" duration="2866000" />
       <workItem from="1571148341804" duration="2546000" />
       <workItem from="1571194525027" duration="1928000" />
-      <workItem from="1571202238398" duration="5101000" />
+      <workItem from="1571202238398" duration="7050000" />
+      <workItem from="1571451794825" duration="1023000" />
+      <workItem from="1571639107995" duration="14191000" />
     </task>
     <task id="LOCAL-00001" summary="还原原来的代码">
       <created>1568022022152</created>
@@ -249,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571208287535</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="在jenkins运行">
+      <created>1571208548967</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1571208548967</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,20 +357,6 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>token</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>request</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
   </component>
   <component name="masterDetails">
     <states>

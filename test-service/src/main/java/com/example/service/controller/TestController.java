@@ -6,6 +6,7 @@ import com.example.service.dao.HotelMapper;
 import com.example.common.entry.hotel.Hotel;
 import com.example.common.entry.tw.Tw;
 import com.example.service.dao.TwMapper;
+import com.example.service.service.HotelService;
 import com.example.service.service.TempService;
 import com.example.service.service.TestCVS;
 import com.example.service.service.TestService;
@@ -48,6 +49,9 @@ public class TestController {
 
     @Autowired
     private RedisCommon redisCommon;
+
+    @Autowired
+    private HotelService hotelService;
 
     @Value("${customValue.tempValue}")
     private String tempValue;
@@ -201,8 +205,11 @@ public class TestController {
     {
         try
         {
+            /*
             redisCommon.setData();
             redisCommon.getData();
+
+             */
 
             return "成功";
         }
@@ -213,6 +220,39 @@ public class TestController {
             return "失败";
         }
     }
+
+    @GetMapping("testHotel")
+    public String testHotel()
+    {
+        try
+        {
+            hotelService.insertHotel();
+
+            return "成功";
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+            return "失败";
+        }
+    }
+
+    @GetMapping("getRedisData")
+    public String getRedisData(String s)
+    {
+        try
+        {
+            return hotelService.getData(s);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+            return "失败";
+        }
+    }
+
 
     /*
     @RequestMapping("/")
