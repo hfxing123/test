@@ -30,6 +30,10 @@ public interface HotelMapper {
 
 	Hotel selectByCityId(int city_id);
 
+    Hotel selectByCityId4Update(int city_id);
+
+    int updateCount(Hotel record);
+
     List<Hotel> findList(Hotel record);
 
     int insert(Hotel record);

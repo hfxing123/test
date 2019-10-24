@@ -32,6 +32,8 @@ public class Hotel implements Serializable {
 
 	private String zip;
 
+	private Integer count;
+
 	public Long getCity() {
 		return city;
 	}
@@ -64,9 +66,17 @@ public class Hotel implements Serializable {
 		this.zip = zip;
 	}
 
+	public Integer getCount() {
+		return count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+
 	@Override
 	public String toString() {
-		return getCity() + "," + getName() + "," + getAddress() + "," + getZip();
+		return getCity() + "," + getName() + "," + getAddress() + "," + getZip()+","+getCount();
 	}
 	
 }

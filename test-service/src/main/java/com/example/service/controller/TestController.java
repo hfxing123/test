@@ -19,7 +19,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +29,7 @@ import java.util.List;
 @RestController
 public class TestController {
 
-    public final static Logger logger = LoggerFactory.getLogger(TestController.class);
+    public final static Logger log = LoggerFactory.getLogger(TestController.class);
 
     @Autowired
     private HotelMapper hotelMapper;
@@ -106,7 +105,7 @@ public class TestController {
         List<Hotel> list=hotelMapper.findList(new Hotel());
         PageInfo info =new PageInfo(list);
 
-        logger.error("测试错误");
+        log.error("测试错误");
 
         return JSON.toJSON(info).toString();
 
@@ -179,7 +178,7 @@ public class TestController {
     public String getMqData()
     {
         String temp=tempService.getData();
-        System.out.println("获得的mq里面的值为====="+temp);
+        log.info("获得的mq里面的值为====="+temp);
         return temp;
     }
 
@@ -194,7 +193,7 @@ public class TestController {
         }
         catch(Exception e)
         {
-            System.out.println(e.getMessage());
+            log.error(e.getMessage());
             e.printStackTrace();
             return "失败";
         }
@@ -215,7 +214,7 @@ public class TestController {
         }
         catch(Exception e)
         {
-            System.out.println(e.getMessage());
+            log.error(e.getMessage());
             e.printStackTrace();
             return "失败";
         }
@@ -232,7 +231,7 @@ public class TestController {
         }
         catch(Exception e)
         {
-            System.out.println(e.getMessage());
+            log.error(e.getMessage());
             e.printStackTrace();
             return "失败";
         }
@@ -247,7 +246,7 @@ public class TestController {
         }
         catch(Exception e)
         {
-            System.out.println(e.getMessage());
+            log.error(e.getMessage());
             e.printStackTrace();
             return "失败";
         }

@@ -5,6 +5,8 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.ReferenceCountUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,6 +16,8 @@ import java.util.Map;
  * Handles a server-side channel.
  */
 public class DiscardServerHandler extends ChannelInboundHandlerAdapter { // (1)
+
+    Logger log = LoggerFactory.getLogger(DiscardServerHandler.class);
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) { // (2)
@@ -60,7 +64,7 @@ public class DiscardServerHandler extends ChannelInboundHandlerAdapter { // (1)
 
 
             Object o=ServiceDo.getInstance().Handle(map,ctx);
-            System.out.println("返回的======"+o.toString());
+            log.debug("返回的======"+o.toString());
 
 
 
@@ -76,8 +80,8 @@ public class DiscardServerHandler extends ChannelInboundHandlerAdapter { // (1)
         catch (Exception e)
         {
             e.printStackTrace();
-            System.out.println(e.getMessage());
-            System.out.println("报错了");
+            log.error(e.getMessage());
+            log.error("报错了");
         }
         finally {
             ReferenceCountUtil.release(msg); // (2)

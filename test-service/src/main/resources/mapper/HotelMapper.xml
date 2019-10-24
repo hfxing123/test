@@ -22,8 +22,16 @@
 <mapper namespace="com.example.service.dao.HotelMapper">
 
     <select id="selectByCityId" resultType="com.example.common.entry.hotel.Hotel">
-        select * from hotel where city = #{id}
+        select * from hotel where city = #{city}
     </select>
+
+    <select id="selectByCityId4Update" resultType="com.example.common.entry.hotel.Hotel">
+        select * from hotel where city = #{city} for update
+    </select>
+
+    <update id="updateCount" parameterType="com.example.common.entry.hotel.Hotel">
+        update hotel set count=#{count} where city=#{city}
+    </update>
 
     <select id="findList" parameterType="com.example.common.entry.hotel.Hotel" resultType="com.example.common.entry.hotel.Hotel">
         select * from hotel

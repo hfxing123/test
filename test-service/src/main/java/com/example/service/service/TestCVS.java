@@ -139,10 +139,10 @@ public class TestCVS {
                 }
             }
 
-            System.out.println("csv表格中所有行数：" + allString.size());
+//            System.out.println("csv表格中所有行数：" + allString.size());
 
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+//            System.out.println(e.getMessage());
             e.printStackTrace();
         }
 

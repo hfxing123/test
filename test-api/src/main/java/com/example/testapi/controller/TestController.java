@@ -5,6 +5,8 @@ import com.example.testapi.authorization.annotation.CustomAuthorization;
 import com.example.testapi.rpc.HystrixClient;
 import com.example.testapi.rpc.Test1Client;
 import io.swagger.annotations.Api;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.Queue;
@@ -21,6 +23,8 @@ public class TestController {
 
     //@Autowired
     //private TestClient testClient;
+
+    Logger log= LoggerFactory.getLogger(TestController.class);
 
     @Autowired
     private HystrixClient hystrixClient;
@@ -49,9 +53,9 @@ public class TestController {
         //没有回退的请求
         //System.out.println("获取的数据为:"+testClient.getData1());
         //有回退的请求
-        System.out.println("新获取到的数据为："+hystrixClient.iFailSometimes());
+        log.debug("新获取到的数据为："+hystrixClient.iFailSometimes());
 
-        System.out.println("第二获得的============"+test1Client.iFailSometimes());
+        log.debug("第二获得的============"+test1Client.iFailSometimes());
 
         //拥有原因能回退的请求
         //System.out.println("能回退的函数返回======"+testHystrixClient.iFailSometimes());

@@ -102,7 +102,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("API接口在线文档")
                 .description("统一URL：http://47.107.46.179:8081")
-                .contact(new Contact("黄峰行", "http://47.107.46.179:8081", "hfxing123@qq.com"))
+                .contact(new Contact("hfx", "http://47.107.46.179:8081", "hfxing123@qq.com"))
                 .version("1.0.0") //显示版本号
                 .build();
     }

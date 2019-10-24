@@ -1,6 +1,8 @@
 package com.example.testapi.config;
 
 import com.example.testapi.filter.JwtFilter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +21,8 @@ import java.util.List;
  */
 @Configuration
 public class ApplicationConfig extends WebMvcConfigurationSupport {
+
+    private static Logger log= LoggerFactory.getLogger(ApplicationConfig.class);
 
     @Autowired
     private JwtFilter jwtFilter;
@@ -69,7 +73,7 @@ public class ApplicationConfig extends WebMvcConfigurationSupport {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
-        //System.out.println("进入了-----------------------------------");
+        //log.debug("进入了-----------------------------------");
 
         /*
         registry.addResourceHandler("/**")
