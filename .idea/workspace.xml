@@ -2,24 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="590ec9e1-a00d-40c2-8215-1ae61747f6ab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/common/CommonUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-api/src/main/java/com/example/testapi/authorization/shiro/CustomRealm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-api/src/main/java/com/example/testapi/config/ShiroConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-api/src/main/java/com/example/testapi/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-api/src/main/java/com/example/testapi/rpc/UserClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-api/src/main/java/com/example/testapi/service/LoginShiroService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-common/src/main/java/com/example/common/constant/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-common/src/main/java/com/example/common/entry/user/Permission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-common/src/main/java/com/example/common/entry/user/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-common/src/main/java/com/example/common/entry/user/RolePermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-common/src/main/java/com/example/common/entry/user/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-common/src/main/java/com/example/common/entry/user/UserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-common/src/main/java/com/example/common/exception/BusinessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-common/src/main/java/com/example/common/message/Resp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-common/src/main/java/com/example/common/message/ResponseMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-common/src/main/java/com/example/common/utils/CommonUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-common/src/main/java/com/example/common/utils/EncodingOperation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/dao/user/PermissionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/dao/user/RoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/dao/user/RolePermissionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/dao/user/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/dao/user/UserRoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service/src/main/resources/mapper/user/PermissionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service/src/main/resources/mapper/user/RoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service/src/main/resources/mapper/user/RolePermissionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service/src/main/resources/mapper/user/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service/src/main/resources/mapper/user/UserRoleMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-api/src/main/java/com/example/testapi/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-api/src/main/java/com/example/testapi/config/ApplicationConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-api/src/main/java/com/example/testapi/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-api/src/main/java/com/example/testapi/config/SwaggerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-api/src/main/java/com/example/testapi/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-api/src/main/java/com/example/testapi/controller/TestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-api/src/main/java/com/example/testapi/rpc/Test1Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-api/src/main/java/com/example/testapi/rpc/Test1Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-common/src/main/java/com/example/common/entry/hotel/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-common/src/main/java/com/example/common/entry/hotel/Hotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/base/DiscardServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/base/DiscardServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/base/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/base/TestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/common/RedisCommon.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/common/RedisCommon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/configuration/RabbitConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/configuration/RabbitConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/dao/HotelMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/dao/HotelMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/service/HotelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/service/HotelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/service/TestCVS.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/service/TestCVS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/service/TestListenerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-service/src/main/java/com/example/service/service/TestListenerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test-service/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-service/src/main/resources/mapper/HotelMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-service/src/main/resources/mapper/HotelMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-service/src/main/resources/application-pro.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test-service/src/main/resources/application-pro.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +81,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test-service/src/main/java/com/example/service/common" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test-common/src/main/java/com/example/common/message" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -70,16 +91,22 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\hfxing123\Documents\GitHub\test\test-service\src\main\resources\mapper\user" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.service.service" />
-      <recent name="com.example.common.util" />
+      <recent name="com.example.testapi.rpc" />
+      <recent name="com.example.service.controller" />
+      <recent name="com.example.common.utils" />
+      <recent name="com.example.common.constant" />
+      <recent name="com.example.common.exception" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\hfxing123\Documents\GitHub\test\test-common\src\main\java\com\example\common\message" />
+      <recent name="D:\Users\hfxing123\Documents\GitHub\test\test-common\src\main\java\com\example\common\entry\user" />
+      <recent name="D:\Users\hfxing123\Documents\GitHub\test\test-service\src\main\java\com\example\service\dao" />
+      <recent name="D:\Users\hfxing123\Documents\GitHub\test\test-service\src\main\resources\mapper" />
       <recent name="D:\Users\hfxing123\Documents\GitHub\test\test-service\src\main\java\com\example\service\common" />
-      <recent name="D:\Users\hfxing123\Documents\GitHub\test\test-api\src\main\java\com\example\testapi\config" />
-      <recent name="D:\Users\hfxing123\Documents\GitHub\test\test-common\src\main\java\com\example\common\entry" />
-      <recent name="D:\Users\hfxing123\Documents\GitHub\test\test-api\src\main\java\com\example\testapi" />
-      <recent name="D:\Users\hfxing123\Documents\GitHub\test\test-service\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -156,7 +183,17 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@51f6a731" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@51f6a731" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@8cd53b86" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -223,7 +260,19 @@
       <workItem from="1571833929306" duration="749000" />
       <workItem from="1571834887290" duration="1305000" />
       <workItem from="1571837618193" duration="2545000" />
-      <workItem from="1571882829590" duration="777000" />
+      <workItem from="1571882829590" duration="1510000" />
+      <workItem from="1571885124602" duration="151000" />
+      <workItem from="1571885542898" duration="202000" />
+      <workItem from="1571886137236" duration="755000" />
+      <workItem from="1571888297320" duration="5649000" />
+      <workItem from="1572317484794" duration="7615000" />
+      <workItem from="1572420546342" duration="8000" />
+      <workItem from="1572542518684" duration="973000" />
+      <workItem from="1572835928719" duration="1184000" />
+      <workItem from="1572917764099" duration="18445000" />
+      <workItem from="1573133878976" duration="3234000" />
+      <workItem from="1573182329938" duration="601000" />
+      <workItem from="1573566604363" duration="4279000" />
     </task>
     <task id="LOCAL-00001" summary="还原原来的代码">
       <created>1568022022152</created>
@@ -288,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571726562040</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="在jenkins运行">
+      <created>1571884306518</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1571884306518</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

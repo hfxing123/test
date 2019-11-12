@@ -53,9 +53,9 @@ public class TestController {
         //没有回退的请求
         //System.out.println("获取的数据为:"+testClient.getData1());
         //有回退的请求
-        log.debug("新获取到的数据为："+hystrixClient.iFailSometimes());
+        log.info("新获取到的数据为："+hystrixClient.iFailSometimes());
 
-        log.debug("第二获得的============"+test1Client.iFailSometimes());
+        log.info("第二获得的============"+test1Client.iFailSometimes());
 
         //拥有原因能回退的请求
         //System.out.println("能回退的函数返回======"+testHystrixClient.iFailSometimes());

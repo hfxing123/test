@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(name = "test-service",fallback = Test1Client.Test1ClientFallback.class)
 public interface Test1Client {
 
-
-
-    @RequestMapping(method = RequestMethod.POST, value = "/getData9")
+    @RequestMapping(method = RequestMethod.GET, value = "/getData9")
     String iFailSometimes();
 
     @Component

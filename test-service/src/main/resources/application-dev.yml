@@ -11,8 +11,8 @@ spring:
 #    password: secret
     username: guest
     password: guest
-    publisher-confirms: true #消息发送到交换机确认机制，是否确认回调
-    publisher-returns: true #消息发送到交换机确认机制，是否返回回调
+#    publisher-confirms: true #消息发送到交换机确认机制，是否确认回调
+#    publisher-returns: true #消息发送到交换机确认机制，是否返回回调
     listener:
       simple:
         acknowledge-mode: manual #采用手动应答
@@ -24,6 +24,7 @@ spring:
         acknowledge-mode: manual #采用手动应答
   redis: #redis
     host: 47.107.46.179
+#    host: 127.0.0.1
     port: 6379
     #用连接池
     jedis:
@@ -58,7 +59,8 @@ spring:
 
 mybatis:
 #  config-location: classpath:mybatis-config.xml
-  mapper-locations: classpath:mapper/*.xml
+  mapper-locations: classpath:mapper/**/*.xml
+#  mapper-locations: classpath:mapper/*.xml
 #  type-aliases-package: com.example.service.model
   type-aliases-package: com.example.common.entry
   configuration:
@@ -104,11 +106,12 @@ swagger:
 
 #  \test\test-service\src\main\java\com\example\service\dao
 logging:
-  level:
-    com:
-      example:
-        service:
-          dao: debug
+#输出dao层的sql语句等日志
+#  level:
+#    com:
+#      example:
+#        service:
+#          dao: debug
   #log4j2
   config: classpath:logback-dev.xml
 

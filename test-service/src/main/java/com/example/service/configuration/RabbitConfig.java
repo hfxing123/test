@@ -49,6 +49,7 @@ public class RabbitConfig {
      * ConfirmCallback接口用于实现消息发送到RabbitMQ交换器后接收ack回调   即消息发送到exchange  ack
      * ReturnCallback接口用于实现消息发送到RabbitMQ 交换器，但无相应队列与交换器绑定时的回调  即消息发送不到任何一个队列中  ack
      */
+    /*
     @Bean //RabbitTemplate getTemplate(ConnectionFactory connectionFactory) rabbitTemplate
     public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
 
@@ -83,6 +84,7 @@ public class RabbitConfig {
 
         return rabbitTemplate;
     }
+    */
 
 //    /**
 //     * 配置启用rabbitmq事务

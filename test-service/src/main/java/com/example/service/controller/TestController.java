@@ -19,13 +19,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-@Api("用户信息管理")
+@Api("测试信息管理")
 @RestController
 public class TestController {
 
@@ -144,9 +145,11 @@ public class TestController {
 
          */
 
-        Tw tw=twMapper.selectByPrimaryKey(1);
+        //Tw tw=twMapper.selectByPrimaryKey(1);
 
-        return JSON.toJSON(tw).toString();
+        Hotel hotel=hotelMapper.selectByCityId(1);
+
+        return JSON.toJSON(hotel).toString();
 
         //return "获得的tempValue="+tempValue;
     }
@@ -252,6 +255,15 @@ public class TestController {
         }
     }
 
+    @GetMapping("/hotelSendData")
+    public String hotelSendData()
+    {
+        hotelService.sendData();
+
+        System.out.println("TestController运行完的时间为"+System.currentTimeMillis());
+
+        return "成功";
+    }
 
     /*
     @RequestMapping("/")

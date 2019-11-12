@@ -51,7 +51,7 @@ public class ApplicationConfig extends WebMvcConfigurationSupport {
         registry.addInterceptor(jwtFilter)
                 .addPathPatterns("/**")
 
-                .excludePathPatterns("/sysUser/login","/m/**"
+                .excludePathPatterns("/login/**","/m/**"
                         ,"/swagger-ui.html","/configuration/ui","/swagger-resources/**","/configuration/security","/v2/api-docs","/error","/webjars/**","/**/favicon.ico")
 
                 // /swagger-resources/configuration/ui
